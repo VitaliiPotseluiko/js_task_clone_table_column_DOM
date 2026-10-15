@@ -8,11 +8,9 @@ rows.forEach((row) => {
 
   if (row.cells[1].tagName === 'TH') {
     newThCell.textContent = row.cells[1].textContent;
-    row.cells[3].after(newThCell);
-  }
-
-  if (row.cells[1].tagName === 'TD') {
+    row.cells[row.cells.length - 2].after(newThCell);
+  } else {
     newTdCell.textContent = row.cells[1].textContent;
-    row.cells[3].after(newTdCell);
+    row.cells[row.cells.length - 2].after(newTdCell);
   }
 });
